@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: EmbabelDemo
+  threads:
+    virtual:
+      enabled: true
+  profiles:
+    active: shell
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+#    mcp:
+#      client:
+#        enabled: true
+#        name: embabel
+#        version: 1.0.0
+#        request-timeout: 300s
+#        type: SYNC
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+
+embabel:
+  models:
+    default-llm: mistral:latest
+  llm-operations:
+    data-binding:
+      maxAttempts: 2
